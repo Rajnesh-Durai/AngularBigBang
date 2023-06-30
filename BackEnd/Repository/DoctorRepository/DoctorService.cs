@@ -34,6 +34,10 @@ namespace BigBangAngular30thJune.Repository.DoctorRepository
             existingDoctor.DoctorName = doctor.DoctorName;
             existingDoctor.Specialization = doctor.Specialization;
             existingDoctor.YearsOfExperience = doctor.YearsOfExperience;
+            existingDoctor.EducationLevel = doctor.EducationLevel;
+            existingDoctor.EmailId = doctor.EmailId;
+            existingDoctor.PhoneNumber = doctor.PhoneNumber;
+            existingDoctor.AlternatePhoneNumber = doctor.AlternatePhoneNumber;
 
             await _dbContext.SaveChangesAsync();
             return existingDoctor;
