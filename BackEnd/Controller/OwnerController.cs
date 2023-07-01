@@ -14,20 +14,7 @@ namespace BigBangAngular30thJune.Controllers
         {
             _adminService = adminService;
         }
-        [Authorize(Roles ="Admin")]
-        [HttpGet("ListOfDoctors")]
-        public async Task<ActionResult<List<DoctorDetails>>> GetAllDoctors()
-        {
-            try
-            {
-                var item = await _adminService.GetAllDoctors();
-                return Ok(item);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return NotFound(ex.Message);
-            }
-        }
+
         [Authorize(Roles = "Admin")]
         [HttpPost("AddNewDoctor")]
         public async Task<ActionResult<string>> AddDoctor(DoctorDetails doctorDetails)

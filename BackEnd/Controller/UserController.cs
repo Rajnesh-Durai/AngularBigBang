@@ -14,8 +14,8 @@ namespace BigBangAngular30thJune.Controllers
         {
             _userService = userService;
         }
-        [Authorize(Roles ="Patient")]
-        [HttpGet("List Of Doctors")]
+        [Authorize(Roles ="Patient,Admin")]
+        [HttpGet("ListOfDoctors")]
         public async Task<ActionResult<List<DoctorDetails>>> GetAllDoctors()
         {
             try
@@ -28,8 +28,22 @@ namespace BigBangAngular30thJune.Controllers
                 return NotFound(ex.Message);
             }
         }
-        [Authorize(Roles = "Patient")]
-        [HttpPost("Booking an Appointmant")]
+        [Authorize(Roles = "Patient,Admin")]
+        [HttpGet("DoctorsBased")]
+        public async Task<ActionResult<List<DoctorDetails>>> GetDoctors( string name)
+        {
+            try
+            {
+                var item = await _userService.GetDoctors(name);
+                return Ok(item);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [Authorize(Roles = "Patient,Admin")]
+        [HttpPost("BookingAnAppointmant")]
         public async Task<ActionResult<Appointment>> BookAppointment(Appointment appointment)
         {
             try
