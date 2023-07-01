@@ -15,15 +15,7 @@ namespace BigBangAngular30thJune.Repository.AdminRepository
             _dbContext = dbContext;
         }
 
-        public async Task<List<DoctorDetails>> GetAllDoctors()
-        {
-            var item = await _dbContext.DoctorDetails.ToListAsync();
-            if (item == null)
-            {
-                throw new ArgumentNullException("No Doctors Found");
-            }
-            return item;
-        }
+
         public async Task<string> AddDoctor(DoctorDetails doctorDetails)
         {
             var item= await _dbContext.DoctorDetails.AddAsync(doctorDetails);

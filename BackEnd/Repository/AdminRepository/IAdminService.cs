@@ -5,7 +5,7 @@ namespace BigBangAngular30thJune.Repository.AdminRepository
 {
     public interface IAdminService
     {
-        public Task<List<DoctorDetails>> GetAllDoctors();
+ 
         public Task<string> AddDoctor(DoctorDetails doctorDetails);
         public Task<string> DeleteDoctors(int id);
     }
