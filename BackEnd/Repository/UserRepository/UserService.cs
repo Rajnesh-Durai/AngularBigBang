@@ -21,6 +21,15 @@ namespace BigBangAngular30thJune.Repository.DoctorRepository
             }
             return item;
         }
+        public async Task<List<DoctorDetails>> GetDoctors(string name)
+        {
+            var item= await _dbContext.DoctorDetails.Where(x=>x.Specialization==name).Distinct().ToListAsync();
+            if(item == null)
+            {
+                throw new ArgumentNullException("No doctors available");
+            }
+            return item;
+        }
         public async Task<Appointment> BookAppointment(Appointment appointment)
         {
             var item= await _dbContext.Appointments.AddAsync(appointment);
