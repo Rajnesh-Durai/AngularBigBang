@@ -5,7 +5,7 @@
             <form [formGroup]="addgrp">
                 <div class="flex2">
                     <div>
-                        <input [(ngModel)]="prdtlist.patientName" [ngModelOptions]="{standalone: true}" #iname="ngModel" placeholder="Patient Name">
+                        <input [(ngModel)]="prdtlist.patientName" [ngModelOptions]="{standalone: true}" #iname="ngModel" placeholder="Patient Name" required>
                         <div>
                             <span *ngIf="iname.touched && iname.invalid" class="red">
                                 <span *ngIf="iname.errors?.['required']">shouldn't be Empty</span>
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div>
-                        <input  [(ngModel)]="prdtlist.patientAge" [ngModelOptions]="{standalone: true}" #iage="ngModel" placeholder="Patient Age">
+                        <input  [(ngModel)]="prdtlist.patientAge" [ngModelOptions]="{standalone: true}" #iage="ngModel" placeholder="Patient Age" required>
                         <div>
                             <span *ngIf="iage.touched && iage.invalid" class="red">
                                 <span *ngIf="iage.errors?.['required']">shouldn't be Empty</span>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="flex2">
                     <div>
-                        <input  [(ngModel)]="prdtlist.diseaseName" [ngModelOptions]="{standalone: true}" #idis="ngModel"  placeholder="Disease Name">
+                        <input  [(ngModel)]="prdtlist.diseaseName" [ngModelOptions]="{standalone: true}" #idis="ngModel"  placeholder="Disease Name" required>
                         <div>
                             <span *ngIf="idis.touched && idis.invalid" class="red">
                                 <span *ngIf="idis.errors?.['required']">shouldn't be Empty</span>

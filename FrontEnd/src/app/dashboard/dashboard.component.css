@@ -1,6 +1,33 @@
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.welcome
+{
+    width: 240px;
+    border-radius: 30px;
+    border: 1px solid #1b78c6;
+    background-color: #f3fbfe;
+    color: #053ba1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 500;position: relative;
+    top: 100px;
+    margin: auto;
+    opacity: 0.9;
+}
+.welcome {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+ 
 .flexprop{
     display: flex;
     justify-content: space-between;

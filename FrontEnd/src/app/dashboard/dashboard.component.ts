@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit{
+    //profile
+    public appt: any[] = [];
+    public arraylength!:number;
+    public docName:any;
+    showWelcome:boolean=true;
+local:any
+    constructor(){}
   ngOnInit(): void {
+
+    this.local=localStorage.getItem('name')
+      // Hide the welcome div after 3 seconds
+      timer(2000).subscribe(() => {
+        this.showWelcome = false;
+      });
     document.addEventListener('DOMContentLoaded', function() {
       var content = document.querySelector('.content');
-      var content1=document.querySelector('.content1')
-      var content2=document.querySelector('.content2')
+      var content1=document.querySelector('.content1');
+      var content2=document.querySelector('.content2');
       function isElementInView(el:any) {
         var rect = el.getBoundingClientRect();
         return (
@@ -45,4 +59,5 @@ export class DashboardComponent implements OnInit{
     });
     
   }
+
 }

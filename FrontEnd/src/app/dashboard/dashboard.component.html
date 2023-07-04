@@ -1,4 +1,7 @@
 <div class="containers">
+    <div class="welcome" [ngClass]="{ 'hidden': !showWelcome }">
+        <div>Welcome {{local}}!</div>
+    </div>
     <p class="p2">How Can We Help<br>You Today...</p>
     <div class="flexprop">
         <div>
@@ -11,12 +14,12 @@
     </div>
 </div>
 <div class="container2 ">
-    <div class="content2">
+    <div>
         <div class="core">Our Core Values</div>
         <div class="mgm">MGM Healthcare aspires to deliver outstanding patient experiences with world class expertise backed by next generation medical and digital technologies because you deserve the best of care and are at the core of everything we do.
         </div>
     </div>
-    <div class="margin2 content1">
+    <div class="margin2 ">
         <div class="core">Why Choose Us</div>
         <div class="mgm">We constantly strive to provide the best healthcare,
             with such an effort we have achieved,</div>
@@ -58,7 +61,7 @@
     <div class="container3">
         <div class="flexprop2">
             <div class="margin4">
-                <div class="flex content">
+                <div class="flex ">
                     <div class="core2">Consult our Doctors</div>
                     <div class="mgm">Beat The Queue To Consult A Doctor From MGM Hospital.<br>
         

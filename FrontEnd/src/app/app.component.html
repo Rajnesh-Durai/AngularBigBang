@@ -1,0 +1,77 @@
+<header>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <div class="sticky">
+    <div class="img">
+      <img alt="logo" [src]="logo"  />
+      <div class="curs"  [routerLink]="['/home']">MGM HealthCare</div>
+    </div>
+    <input type="checkbox" id="nav-check" hidden />
+    <nav >   
+      <ul>
+        <li *ngIf="role==='Patient' || role=== 'Admin' || role=== 'Doctor'">
+          <p  [routerLink]="['/home/aboutus']" >About Us</p>
+        </li>
+        <li *ngIf="role !== 'Doctor' && (role === 'Patient' || role === 'Admin')">
+          <p  [routerLink]="['/home/doctors']">Our Doctors</p>
+        </li>
+        <li *ngIf="role !== 'Doctor' && (role === 'Admin')">
+          <p  [routerLink]="['/home/admin']" >Admin</p>
+        </li>
+        <li *ngIf="role !== 'Doctor' && (role === 'Patient' || role === 'Admin')">
+          <p  [routerLink]="['/home/booknow']">Book Now</p>
+        </li>
+        <li *ngIf="role==='Doctor'">
+          <p  [routerLink]="['/home/MyProfile']"><span><i class="fa fa-circle-user fa-xl " style="color: #5993f7;"></i></span></p>
+        </li>
+        <li *ngIf="role=== 'Doctor'">
+          <p  [routerLink]="['/home/appointDetails']"><span><i class="fa fa-envelope fa-shake fa-xl" style="color: #5993f7;"></i></span> <span class="tot">{{totalItem2}}</span></p>
+        </li>
+        <li *ngIf="role==='Admin'">
+          <p [routerLink]="['/home/requestLogin']"  class="cbg"><span><i class="fa fa-bell fa-shake fa-xl" style="color: #5993f7;"></i></span> <span class="tot">{{totalItem}}</span></p>
+        </li>
+        <li>
+          <p *ngIf="role==='Patient' || role=== 'Admin' || role=== 'Doctor'" (click)="logout()" >Logout</p>
+      </li>
+      </ul>
+    </nav>
+    <label for="nav-check" class="toggles">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+  </div>
+</header>
+<router-outlet ></router-outlet>
+<!-- <app-admin/> -->
+<footer class="foot">
+    <div class="containers">
+        <div class="foot-flex">
+            <div>
+                <p>
+                   <b>Information</b> 
+                </p>
+                <div>
+                    <p>About Us</p>
+                    <p>Hospital Information</p>
+                    <p>Privacy Policy</p>
+                    <p>Terms & Condition</p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <b>Contact</b>
+                </p>
+                <div>
+                    <p>MGM Hospital</p>
+                    <p>Chennai, Tamilnadu</p>
+                    <p>mgm@org.in</p>
+                    <p>(+91) 94444 44105</p>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            © 2023 All Rights Reserved by MGM Hospital
+        </div>
+    </div>
+</footer>

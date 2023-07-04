@@ -64,7 +64,7 @@
                 <div class="msg light" *ngIf="status">
                     {{status.message}}
                  </div>
-                 <div>{{outmessage}}</div>
+                 <div [ngClass]="{ 'hidden': !showWelcome }">{{outmessage}}</div>
             </form>
             
         </div>
